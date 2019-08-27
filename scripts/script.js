@@ -1,9 +1,5 @@
 window.addEventListener('load', () => {
     
-    setInterval(() => {
-        alert(window.innerWidth);
-    }, 10000);
-    
     let interval = setInterval(() => {
         let months, weeks, days, hours, minutes, seconds;
         
