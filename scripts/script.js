@@ -2,29 +2,19 @@ window.addEventListener('load', () => {
     let interval = setInterval(() => {
         let months, weeks, days, hours, minutes, seconds;
         
-        endDate = new Date(2020, 7, 16, 8, 0).getTime();
+        endDate = new Date(2020, 6, 16, 8, 0).getTime();
         
         startDate = new Date().getTime();
         
-        let timeRemaining = parseInt((endDate - startDate) / 1000);
+        let timeRemaining = parseInt((endDate - startDate));
         
         if (timeRemaining >= 0) {
-            days = parseInt(timeRemaining / 86400);
-            timeRemaining = timeRemaining % 86400;
-            
-            weeks = parseInt(days / 7);
-            days %= 7;
-
-            months = parseInt(weeks / 4.345);
-            weeks %= 4,345;
-
-            hours = parseInt(timeRemaining / 3600);
-            timeRemaining = timeRemaining % 3600;
-            
-            minutes = parseInt(timeRemaining / 60);
-            timeRemaining = timeRemaining % 60;
-            
-            seconds = parseInt(timeRemaining);
+            days = Math.floor((timeRemaining / (1000 * 60 * 60 * 24)));
+            weeks = Math.floor(days / 7);
+            days = Math.floor(days % 7);
+            hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
             if (months === 1) {
                 months = `${months} Monat`;
@@ -62,7 +52,7 @@ window.addEventListener('load', () => {
                 seconds = `${("0" + seconds).slice(-2)} Sekunden`;
             }
 
-            document.getElementById("months").textContent = months;             
+            // document.getElementById("months").textContent = months;             
             document.getElementById("weeks").textContent = weeks;             
             document.getElementById("days").textContent = days;
             document.getElementById("hours").textContent = hours;
@@ -75,5 +65,5 @@ window.addEventListener('load', () => {
             document.getElementById("mins").textContent = 'viel';
             document.getElementById("secs").textContent = 'spaß!';
         }
-    }, 1000);
+    }, 100);
 });
