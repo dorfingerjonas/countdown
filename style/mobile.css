@@ -1,4 +1,4 @@
-@media (max-width: 500px) and (orientation: landscape) {
+@media only screen and (max-width: 620px) {
     body {
         width: 100vw;
         height: 100vh;
