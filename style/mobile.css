@@ -56,6 +56,7 @@
 
     #days {
         color: #6956e1;
+        white-space: nowrap;
     }
 
     #hours {
