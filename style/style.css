@@ -9,7 +9,6 @@ body {
     text-transform: uppercase;
     flex-direction: column;
     overflow: hidden;
-    /* color: #7bb7fa; */
     color: whitesmoke;
     font-size: 4vmin;
     background-image: url("../img/background.JPG");
@@ -28,14 +27,19 @@ body {
 }
 
 #time {
-    width: 70vw;
+    width: 80vw;
     height: 10vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background: #273238;
-    padding: 0 15vw;
+    padding: 0 10vw;
+}
+
+#time p {
+    width: 15%;
+    text-align: center;
 }
 
 #months {
