@@ -11,19 +11,19 @@ body {
     overflow: hidden;
     color: whitesmoke;
     font-size: 4vmin;
-    background-image: url("../img/background.JPG");
+    /*background-image: url("../img/background.JPG");*/
     background-size: 100%;
     background-repeat: no-repeat;
     user-select: none;
+    background: #273238;
 }
 
 #wrapper {
     width: 100vw;
-    height: 85vh;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 #time {
@@ -33,7 +33,6 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    background: #273238;
     padding: 0 10vw;
 }
 

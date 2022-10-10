@@ -1,17 +1,16 @@
 window.addEventListener('load', () => {
-    const finalDate = new Date(2021, 6, 22, 8, 0).getTime();
-    
+    const finalDate = new Date(2022, 11, 20, 18, 0).getTime();
+    // const finalDate = new Date(2023, 6, 10, 18, 0).getTime();
+
     const interval = setInterval(() => {
         const timeData = {};
-        
+
         const currentTime = Date.now();
-        
+
         const timeRemaining = finalDate - currentTime;
-        
+
         if (timeRemaining >= 0) {
             timeData.days = Math.floor((timeRemaining / (1000 * 60 * 60 * 24)));
-            timeData.weeks = Math.floor(timeData.days / 7);
-            timeData.days = Math.floor(timeData.days % 7);
             timeData.hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             timeData.minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
             timeData.seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
@@ -21,7 +20,7 @@ window.addEventListener('load', () => {
             } else {
                 timeData.months = `${timeData.months} Monate`;
             }
-            
+
             if (timeData.weeks === 1) {
                 timeData.weeks = `${timeData.weeks} Woche`;
             } else {
@@ -51,19 +50,13 @@ window.addEventListener('load', () => {
             } else {
                 timeData.seconds = `${('0' + timeData.seconds).slice(-2)} Sekunden`;
             }
-           
-            document.getElementById('weeks').textContent = timeData.weeks;             
+
             document.getElementById('days').textContent = timeData.days;
             document.getElementById('hours').textContent = timeData.hours;
             document.getElementById('mins').textContent = timeData.minutes;
             document.getElementById('secs').textContent = timeData.seconds;
         } else {
             clearInterval(interval);
-            document.getElementById('weeks').textContent = 'Enjoy';
-            document.getElementById('days').textContent = 'the';
-            document.getElementById('hours').textContent = 'time';
-            document.getElementById('mins').textContent = 'together!';
-            document.getElementById('secs').textContent = '';
         }
     }, 10);
 });
