@@ -15,46 +15,34 @@ window.addEventListener('load', () => {
             timeData.minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
             timeData.seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            if (timeData.months === 1) {
-                timeData.months = `${timeData.months} Monat`;
-            } else {
-                timeData.months = `${timeData.months} Monate`;
-            }
-
-            if (timeData.weeks === 1) {
-                timeData.weeks = `${timeData.weeks} Woche`;
-            } else {
-                timeData.weeks = `${timeData.weeks} Wochen`;
-            }
-
             if (timeData.days === 1) {
-                timeData.days = `${timeData.days} Tag`;
+                timeData.days = `${timeData.days} <br> Tag`;
             } else {
-                timeData.days = `${timeData.days} Tage`;
+                timeData.days = `${timeData.days} <br> Tage`;
             }
 
             if (timeData.hours === 1) {
-                timeData.hours = `${('0' + timeData.hours).slice(-2)} Stunde`;
+                timeData.hours = `${('0' + timeData.hours).slice(-2)} <br> Stunde`;
             } else {
-                timeData.hours = `${('0' + timeData.hours).slice(-2)} Stunden`;
+                timeData.hours = `${('0' + timeData.hours).slice(-2)} <br> Stunden`;
             }
 
             if (timeData.minutes === 1) {
-                timeData.minutes = `${('0' + timeData.minutes).slice(-2)} Minute`;
+                timeData.minutes = `${('0' + timeData.minutes).slice(-2)} <br> Minute`;
             } else {
-                timeData.minutes = `${('0' + timeData.minutes).slice(-2)} Minuten`;
+                timeData.minutes = `${('0' + timeData.minutes).slice(-2)} <br> Minuten`;
             }
 
             if (timeData.seconds === 1) {
-                timeData.seconds = `${('0' + timeData.seconds).slice(-2)} Sekunde`;
+                timeData.seconds = `${('0' + timeData.seconds).slice(-2)} <br> Sekunde`;
             } else {
-                timeData.seconds = `${('0' + timeData.seconds).slice(-2)} Sekunden`;
+                timeData.seconds = `${('0' + timeData.seconds).slice(-2)} <br> Sekunden`;
             }
 
-            document.getElementById('days').textContent = timeData.days;
-            document.getElementById('hours').textContent = timeData.hours;
-            document.getElementById('mins').textContent = timeData.minutes;
-            document.getElementById('secs').textContent = timeData.seconds;
+            document.getElementById('days').innerHTML = timeData.days;
+            document.getElementById('hours').innerHTML = timeData.hours;
+            document.getElementById('mins').innerHTML = timeData.minutes;
+            document.getElementById('secs').innerHTML = timeData.seconds;
         } else {
             clearInterval(interval);
         }
