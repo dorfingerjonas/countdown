@@ -1,6 +1,5 @@
 window.addEventListener('load', () => {
-    const finalDate = new Date(2022, 11, 20, 19, 5).getTime();
-    // const finalDate = new Date(2023, 6, 10, 18, 0).getTime();
+    const finalDate = new Date(2022, 11, 20, 18, 5).getTime();
 
     const interval = setInterval(() => {
         const timeData = {};
@@ -46,5 +45,5 @@ window.addEventListener('load', () => {
         } else {
             clearInterval(interval);
         }
-    }, 10);
+    }, 500);
 });
