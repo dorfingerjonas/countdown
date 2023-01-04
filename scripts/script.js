@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    const finalDate = new Date(2022, 11, 20, 18, 5).getTime();
+    const finalDate = new Date(2023, 3, 1, 18, 0).getTime();
 
     const interval = setInterval(() => {
         const timeData = {};
