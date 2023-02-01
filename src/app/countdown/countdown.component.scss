@@ -32,3 +32,23 @@
     text-align: center;
   }
 }
+
+@media only screen and (max-aspect-ratio: 1 / 1) {
+  :host {
+    flex-direction: column;
+  }
+
+  .time {
+    .value {
+      width: 15vw;
+      height: 15vw;
+      font-size: 8vw;
+      margin: 2.5vw 0 0 0;
+    }
+
+    .unit {
+      font-size: 2.5vw;
+      margin: .25vw 0 0 0;
+    }
+  }
+}

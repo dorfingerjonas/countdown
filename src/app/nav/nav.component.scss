@@ -19,3 +19,14 @@ a {
   margin: 0 1.5vw;
   text-decoration: none;
 }
+
+@media only screen and (max-aspect-ratio: 1 / 1) {
+  :host {
+    flex-direction: column;
+  }
+
+  a {
+    font-size: 8vw;
+    margin: 2.5vw 0 0 0;
+  }
+}
