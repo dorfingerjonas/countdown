@@ -1,0 +1,2 @@
+<a routerLink="/">default</a>
+<a *ngFor="let d of getData()" [routerLink]="'/' + d">{{ d }}</a>

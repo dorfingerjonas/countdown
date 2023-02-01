@@ -1,0 +1,9 @@
+<div class="time" *ngFor="let o of output ? parseOutput(output) : []" (dblclick)="redirect()">
+    <span class="value">
+      {{ o.value | number: '2.0-0' }}
+    </span>
+
+  <span class="unit">
+      {{ o.unit }}
+    </span>
+</div>
