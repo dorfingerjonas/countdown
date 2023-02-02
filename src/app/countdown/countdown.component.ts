@@ -30,17 +30,15 @@ export class CountdownComponent implements OnInit {
     }, 500);
   }
 
-  public calculateTimeDifference(timestamp: number): Output {
-    const output: Output = { days: -1, hours: -1, minutes: -1, seconds: -1 };
-    const currentTime = Date.now();
-    const timeRemaining = timestamp - currentTime;
+  private calculateTimeDifference(timestamp: number): Output {
+    const timeRemaining = timestamp - Date.now();
 
-    output.days = Math.floor((timeRemaining / (1000 * 60 * 60 * 24)));
-    output.hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    output.minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    output.seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-    return output;
+    return {
+      days: Math.floor((timeRemaining / (1000 * 60 * 60 * 24))),
+      hours: Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((timeRemaining % (1000 * 60)) / 1000)
+    };
   }
 
   public parseOutput(output: Output): ParsedOutput[] {
