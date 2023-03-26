@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
   }
 
   public getData(): string[] {
-    return Object.keys(this.data);
+    return Object.keys(this.data).filter(key => key !== '');
   }
 
 
