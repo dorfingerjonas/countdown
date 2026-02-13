@@ -1,5 +1,5 @@
 import { CountdownConfig } from '../app/app.component';
 
 export const data: CountdownConfig = {
-  '': new Date(2023, 10, 5, 17, 0),
+  'Jönköping': new Date(2026, 2, 28, 16, 45),
 };
